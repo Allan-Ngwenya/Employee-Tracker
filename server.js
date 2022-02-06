@@ -10,6 +10,22 @@ const connection = mysql.createConnection({
 
 	user: 'root',
 
-	password: 'PlacePassWordHere',
-	database: 'employeesDB'
+	password: 'Password',
+	database: 'employeeDB'
+});
+
+connection.connect(function (err) {
+	if (err) throw err;
+	console.log("connected as id " + connection.threadId);
+	console.log(`
+    ╔═══╗─────╔╗──────────────╔═╗╔═╗
+    ║╔══╝─────║║──────────────║║╚╝║║
+    ║╚══╦╗╔╦══╣║╔══╦╗─╔╦══╦══╗║╔╗╔╗╠══╦═╗╔══╦══╦══╦═╗
+    ║╔══╣╚╝║╔╗║║║╔╗║║─║║║═╣║═╣║║║║║║╔╗║╔╗╣╔╗║╔╗║║═╣╔╝
+    ║╚══╣║║║╚╝║╚╣╚╝║╚═╝║║═╣║═╣║║║║║║╔╗║║║║╔╗║╚╝║║═╣║
+    ╚═══╩╩╩╣╔═╩═╩══╩═╗╔╩══╩══╝╚╝╚╝╚╩╝╚╩╝╚╩╝╚╩═╗╠══╩╝
+    ───────║║──────╔═╝║─────────────────────╔═╝║
+    ───────╚╝──────╚══╝─────────────────────╚══╝`)
+	// runs the app
+	firstPrompt();
 });
